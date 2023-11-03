@@ -13,7 +13,7 @@ jobs:
 
     strategy:
       matrix:
-        python-version: [3.8, 3.9, 3.10.8]
+        python-version: [3.8, 3.9, 3.10]
 
     steps:
     - uses: actions/checkout@v2
@@ -21,20 +21,17 @@ jobs:
       uses: actions/setup-python@v2
       with:
         python-version: ${{ matrix.python-version }}
-    - name: Install Poetry
+    - name: Install dependencies
       run: |
-        curl -sSL https://install.python-poetry.org | python -
-        echo "$HOME/.local/bin" >> $GITHUB_PATH
-    - name: Install dependencies with Poetry
-      run: |
-        poetry install
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
     - name: Lint with Flake8
       run: |
-        poetry run flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
-        poetry run flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
+        flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+        flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
     - name: Test with pytest
       run: |
-        poetry run pytest
+        pytest
     - name: Test coverage
       run: |
-        poetry run pytest --cov=src tests/
+        pytest --cov=src tests/
