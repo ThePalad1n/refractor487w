@@ -19,7 +19,7 @@ This repository contains the refactored codebase for the 487W assignment. The ma
 
 ### Executing Program
 
-- To run the program, use `python app.py` (replace `app.py` with your script name)
+- To run the program, use `python cs132_HW1.py`
 - Make sure to activate the virtual environment if you are using one before running the script.
 
 ## Refactoring
