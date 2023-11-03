@@ -1,7 +1,3 @@
-Certainly! Below is a template for a README file that you can use for your software engineering assignment involving refactoring code and implementing test cases, along with setting up Continuous Integration (CI) in Python.
-
----
-
 # Project Title: Refactoring and CI Integration for 487W
 
 ## Description
