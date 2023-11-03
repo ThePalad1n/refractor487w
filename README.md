@@ -1,4 +1,4 @@
-# Project Title: Refactoring and CI Integration for 487W
+# Refactoring and CI Integration for 487W
 
 ## Description
 
